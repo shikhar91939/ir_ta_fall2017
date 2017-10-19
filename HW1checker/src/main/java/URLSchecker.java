@@ -15,7 +15,7 @@ import java.util.stream.Collectors;
  */
 public class URLSchecker {
     private static final int MAX_URLS = 1000;
-    private static String filePath = "/Users/shikhar/Downloads/irCorrection_hw1/Yuqing_Zhong_Tu_HW1/Tast-1-urls.txt";
+    private static String filePath = "/Users/shikhar/Downloads/irCorrection_hw1/Yuqing_Zhong_Tu_HW1/Task-2-urls.txt";
     private static String report = "";
     private static List<String> colonHashUrls = new LinkedList<>();
     private static List<String> nonWikiUrls = new LinkedList<>();
@@ -36,14 +36,16 @@ public class URLSchecker {
                         .stream()
 
                         .map(url -> new UrlObj(url))
-                        .peek(ignored -> System.out.print(getSpinnerChar()))
+                        .peek(ignored -> System.out.print("\r"+getSpinnerChar()))
                         .collect(Collectors.toList());
         System.out.println();
 
         spinnerInt=1;
         urlObjs.stream()
-                .peek(ignored -> System.out.print(getSpinnerChar()))
+                //.peek(ignored -> System.out.print(getSpinnerChar()))
+                .peek(urlObj -> System.out.println(urlObj.originalUrl))
                 .forEach(urlObj -> checkEveryUrl(urlObj));
+        System.out.println();
 
         updateReport();
 
