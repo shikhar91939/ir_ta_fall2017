@@ -1,0 +1,38 @@
+Weightage: Task1: 60%. Task2: 40%
+
+Deductions:
+(Applies for both tasks. Deduct only once is mistake done in both tasks)
+Not following crawling directions/ not realizing Task1 is basically BFS: -8
+Incomplete URL Lists: -3 – -5) (based on severity)
+No politeness: -4
+Links containing ':' or '#’:  -5
+External links: -2 – -4
+Non-existent links: -5
+Not handling redirects: -3
+More than 1000 URLs: -3 (okay for Task 2 to exclude seed from result list)
+
+(Applies for Task 2)
+Trying to filter Task 1 results to obtain focused results for Task2:
+-15 (they need to re-crawl, it's called focused *crawling* after all!)
+Downloading a page to scan for [rain] then deciding whether to keep or
+delete it instead of looking at url and anchor: -8 (that defeats the
+purpose of focused crawling)
+Looking for keyword in either anchor OR URL but not both: -3
+
+(Handling variations of rain)
+Handling [rain] only s first word but not as middle or last word: -3
+Considering [rain] as substring in unrelated words (grain): -10 (but,
+e.g. [rainbow] is correct]
+Not handling letter case variations of rain: -4
+
+*There is no unique correct solution for handling the variations of
+rain. Different  combinations of stemming, decompounding, regex,
+casefolding, punctuation would work. You should look for a sensical,
+non-redundant combination. More inclusive combinations are more
+effective (i.e. better). Deduct 2-8 marks if
+redundant/unexplained/incorrect implementation.
+
+(General):
+-30 for missing code
+-15 for missing result file
+-10 for missing explanation file in Task2
